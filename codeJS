@@ -1,0 +1,18 @@
+var largestPhoneNumber = function(userInput){
+    var finalArray = [];
+    for (var x = 0; x < userInput.length; x++){
+    var phNumX = [userInput[x].charAt(0)*1 + userInput[x].charAt(1)*1 + userInput[x].charAt(2)*1 + userInput[x].charAt(4)*1 + userInput[x].charAt(5)*1 + userInput[x].charAt(6)*1 + userInput[x].charAt(8)*1 + userInput[x].charAt(9)*1 + userInput[x].charAt(10)*1 + userInput[x].charAt(11)*1];
+    var noQts = phNumX.splice(0,1)[0];
+    finalArray.push(noQts);
+    }
+    var largest = 0;
+    for (var i = 0; i < finalArray.length; i++){
+        if (finalArray[i] > largest){
+        largest = finalArray[i];
+        var ogNum = finalArray.indexOf(largest);
+        }  
+    }
+console.log("The largest phone number is " + (userInput[ogNum]) + "," + " and its sum is " + (largest));
+};
+
+largestPhoneNumber(['719-352-4941', '303-594-8847', '719-232-1449', '303-678-6001']);
